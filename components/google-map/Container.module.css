@@ -1,0 +1,12 @@
+.container {
+  min-height: 250px;
+  min-width: 250px;
+  max-height: 550px;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+  top: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,10 @@
+.background {
+  background-image: url('../../public/assets/site-img/meetups.jpg');
+  background-size: contain;
+}
+
+.main {
+  margin: 3rem auto;
+  width: 90%;
+  max-width: 70rem;
+}

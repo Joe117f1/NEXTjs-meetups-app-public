@@ -1,0 +1,17 @@
+.window {
+  padding: 4px;
+  min-height: 50px;
+  background-size: cover;
+  background-position: right;
+}
+
+.window h4 {
+  text-align: center;
+  font-family: cursive;
+  color: #042b5f;
+}
+
+.window p {
+  color: #042b5f;
+  background-color: #ffffffd8;
+}

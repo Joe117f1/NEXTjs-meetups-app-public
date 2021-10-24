@@ -1,23 +1,17 @@
-import React, { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useRouter } from 'next/router';
-import AuthContext from '../store/auth-context';
-import useInput from '../hooks/use-input';
-import Card from '../components/ui/Card';
-import classes from '../components/ui/SignInForm.module.css';
+import AuthContext from '../../store/auth-context';
+import useInput from '../../hooks/use-input';
+import Card from './Card';
+import classes from './SignInForm.module.css';
 
 const checkInput = (value: string) => value.trim() !== '';
 const checkPswd = (value: string) => value.trim().length > 2; // only 3 for demo purposes only
-const checkEmail = (value: string) => value.includes('@'); // just basic validation
+const checkEmail = (value: string) => value.includes('@');
 
 const SignInForm: React.FC = () => {
   const ctx = useContext(AuthContext);
   const router = useRouter();
-
-  useEffect(() => {
-    if (ctx.isLoggedIn) {
-      router.push('/all-meetups');
-    }
-  }, [ctx.isLoggedIn, router]);
 
   const {
     value: enteredFname,
@@ -63,7 +57,7 @@ const SignInForm: React.FC = () => {
   };
 
   const loadAllMeetupsPage = () => {
-    router.push('/all-meetups');
+    router.push('/all-meetup');
   };
 
   const fnameClass = fnameHasError
