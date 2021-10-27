@@ -42,10 +42,9 @@ const MapComponent: React.FC<Prop> = props => {
     setSelectedMeetup(marker);
   };
 
-  const onMarkerDragEnd = (ev: any) => {
-    //: React.DragEvent
-    const lat = ev.latLng.lat() as number;
-    const lng = ev.latLng.lng() as number;
+  const onMarkerDragEnd = (ev: google.maps.MapMouseEvent) => {
+    const lat = ev.latLng!.lat();
+    const lng = ev.latLng!.lng();
     setCurrentPosition({ lat, lng });
   };
 
@@ -108,7 +107,7 @@ const MapComponent: React.FC<Prop> = props => {
           {selectedMeetup && (
             <InfoWindow
               position={selectedMeetup.address}
-              // clickable={true}
+              clickable={true}
               onCloseClick={() => setSelectedMeetup(null)}
             >
               <MeetupInfo
